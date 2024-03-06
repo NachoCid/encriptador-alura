@@ -20,31 +20,33 @@
 
     <main>
         <form action="app.js"></form>
-        <div class="container">
-            <div class="input">
-                <textarea name="mensaje" id="" cols="35" rows="15" placeholder="Ingrese el texto aquí"></textarea>
-                <figure>
-                    <img src="img/Exclamation.png">
-                    <figcaption> Solo letras minúsculas y sin acentos </figcaption>
-                </figure>
-            </div>
-            <div class="decodificar">
-                <ul>
-                    <li>
-                        <img src="img/Muneco.png" alt="Muñeco con una lupa" class="imagen">
-                        <legend>Ningún mensaje fue encontrado</legend>
-                        <textarea name="mensaje" id="" cols="43" rows="15" placeholder="Ingresa el texto que desees encriptar o desencriptar."></textarea>
-                    </li>
-                </ul>
-            </div>
+            <div class="container">
+                <div class="input">
+                    <textarea name="mensaje" id="encriptarTexto" cols="35" rows="15" placeholder="Ingrese el texto aquí"></textarea>
+                    <figure>
+                        <img src="img/Exclamation.png">
+                        <figcaption> Solo letras minúsculas y sin acentos </figcaption>
+                    </figure>
+                </div>
+                <div class="decodificar">
+                    <ul>
+                        <li>
+                            <img src="img/Muneco.png" alt="Muñeco con una lupa" class="imagen">
+                            <legend>Ningún mensaje fue encontrado</legend>
+                            <textarea name="mensaje" id="" cols="43" rows="15" placeholder="Ingresa el texto que desees encriptar o desencriptar."></textarea>
+                        </li>
+                    </ul>
+                </div>
 
-        </div>
-        <div class="botones">
-            <input type="button" value="Encriptar" class="encriptar">
-            <input type="button" value="Desencriptar" class="desencriptar">
-        </div>
+            </div>
+            <div class="botones">
+                <button onclick="encriptarBoton();" class="encriptar-boton" id="encriptarBoton">Encriptar</button> 
+                <button onclick="desencriptarBoton();" class="desencriptar-boton" id="desencriptarBoton">Desencriptar</button> 
+            </div>
         </form>
     </main>
+
+    <script src="app.js"></script>
 
 </body>
 
