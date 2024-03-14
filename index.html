@@ -11,43 +11,52 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 
-
-
 <body>
     <header class="logo">
         <h1><img src="img/Logo.png" alt="Logo de Alura"></h1>
     </header>
 
     <main>
-        <form action="app.js"></form>
-            <div class="container">
-                <div class="input">
-                    <textarea name="mensaje" id="encriptarTexto" cols="35" rows="15" placeholder="Ingrese el texto aquí"></textarea>
-                    <figure>
-                        <img src="img/Exclamation.png">
-                        <figcaption> Solo letras minúsculas y sin acentos </figcaption>
-                    </figure>
+        <div class="container">
+            <section class="input">
+                <textarea name="mensaje" id="encriptarTexto" cols="35" rows="20"
+                    placeholder="Ingrese el texto aquí"></textarea>
+                <div class="alerta-caracteres">
+                    <p><img src="img/Exclamation.png"> Solo letras minúsculas y sin acentos </p>
                 </div>
-                <div class="decodificar">
-                    <ul>
-                        <li>
-                            <img src="img/Muneco.png" alt="Muñeco con una lupa" class="imagen">
-                            <legend id="textoSinEncriptar"></legend>
-                            <h3 id="textoMostrado">Aquí aparecerá el texto encriptado o desencriptado.</h3>
-                        </li>
-                    </ul>
+                <div class="botones">
+                    <button onclick="encriptarBoton();" class="encriptar-boton" id="encriptarBoton">Encriptar</button>
+                    <button onclick="desencriptarBoton();" class="desencriptar-boton"
+                        id="desencriptarBoton">Desencriptar</button>
                 </div>
-
-            </div>
-            <div class="botones">
-                <button onclick="encriptarBoton();" class="encriptar-boton" id="encriptarBoton">Encriptar</button> 
-                <button onclick="desencriptarBoton();" class="desencriptar-boton" id="desencriptarBoton">Desencriptar</button> 
-            </div>
-        </form>
+            </section>
+            <section class="decodificar">
+                <ul>
+                    <li>
+                        <img src="img/Muneco.png" alt="Muñeco con una lupa" class="imagen" id="muneco">
+                        <div class="texto-mostrado" id="textoMostrado" contenteditable="true">Aquí aparecerá el texto encriptado o desencriptado</div>
+                        <!-- <textarea name="mensajeFinal" class="texto-mostrado" id="textoMostrado" cols="44" rows="5" placeholder="Aquí aparecerá el texto encriptado o desencriptado"></textarea> -->
+                        <!-- <textarea class="text-final" id="textoFinal"></textarea> -->
+                    </li>
+                </ul>
+                <div class="boton-copiar-position">
+                    <button onclick="copiarPortapapeles();" class="copiar-boton" id="copiarBoton">Copiar texto</button>
+                </div>
+            </section>
+        </div>
     </main>
 
     <script src="app.js"></script>
 
+    <footer>
+        <div class="div-footer">
+            <p>Development by NachoCid</p>
+            <a href="https://www.linkedin.com/in/ignaciocidf"><img src="img/linkedin.png" alt="linkedin ícono"></a>
+            <a href="https://github.com/NachoCid"><img src="img/github-mark.png" alt="github ícono"></a>
+        </div>
+    </footer>
+
 </body>
+
 
 </html>

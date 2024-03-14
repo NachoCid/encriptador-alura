@@ -28,20 +28,19 @@
                         <figcaption> Solo letras minúsculas y sin acentos </figcaption>
                     </figure>
                 </div>
-                <div class="decodificar">
-                    <ul>
-                        <li>
-                            <img src="img/Muneco.png" alt="Muñeco con una lupa" class="imagen">
-                            <legend id="textoSinEncriptar"></legend>
-                            <h3 id="textoMostrado">Aquí aparecerá el texto encriptado o desencriptado.</h3>
-                        </li>
-                    </ul>
+                <div class="botones">
+                    <button onclick="encriptarBoton();" class="encriptar-boton" id="encriptarBoton">Encriptar</button> 
+                    <button onclick="desencriptarBoton();" class="desencriptar-boton" id="desencriptarBoton">Desencriptar</button> 
                 </div>
-
             </div>
-            <div class="botones">
-                <button onclick="encriptarBoton();" class="encriptar-boton" id="encriptarBoton">Encriptar</button> 
-                <button onclick="desencriptarBoton();" class="desencriptar-boton" id="desencriptarBoton">Desencriptar</button> 
+            <div class="decodificar">
+                <ul>
+                    <li>
+                        <img src="img/Muneco.png" alt="Muñeco con una lupa" class="imagen">
+                        <legend id="textoSinEncriptar"></legend>
+                        <h3 id="textoMostrado">Aquí aparecerá el texto encriptado o desencriptado.</h3>
+                    </li>
+                </ul>
             </div>
         </form>
     </main>
