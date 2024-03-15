@@ -5,13 +5,9 @@ function encriptarBoton() {
 
     encriptado();
 
-    limpiarTextoIngresado();
+    // deshabilitarImagen();
 
-    deshabilitarImagen();
-
-    botonCopiar();
-
-    // copiaTexto()
+    // botonCopiar();
 
 }
 
@@ -19,23 +15,24 @@ function desencriptarBoton() {
 
     desencriptar()
 
-    limpiarTextoIngresado();
+    // deshabilitarImagen();
 
-    deshabilitarImagen();
-
-    botonCopiar();
+    // botonCopiar();
 
 }
 
 function copiarPortapapeles(){
-
-        var range = document.createRange();
-        range.selectNode(document.getElementById("textoMostrado"));
-        window.getSelection().removeAllRanges(); // clear current selection
-        window.getSelection().addRange(range); // to select text
-        document.execCommand("copy");
-        window.getSelection().removeAllRanges();// to deselect
+    
+    var range = document.createRange();
+    range.selectNode(document.getElementById("textoMostrado"));
+    navigator.clipboard.writeText(range)
+    .then(() => {
         alert(`Se ha copiado el mensaje: ${range}`);
+        console.log('Texto copiado al portapapeles')
+    })
+    .catch(err => {
+        console.error('Error al copiar al portapapeles:', err)
+    })
 }
 
 
@@ -79,12 +76,14 @@ function encriptado() {
 
         console.log(`cantidad vocales = ${contadorVocales}`);
 
-        if (contadorVocales > 0) {
+        if (contadorVocales < 1 || mensaje.length < 1) {
+            mostrarTextoFinal('#textoMostrado', 'Ningún mensaje fue encontrado para encriptar');
+        } else {
             console.log(`mensaje en = ${mensajeEncriptado}`);
             mostrarTextoFinal('#textoMostrado', mensajeEncriptado);
-        } else {
-            mostrarTextoFinal('#textoSinEncriptar', 'Ningún mensaje fue encontrado para encriptar');
-            mostrarTextoFinal('#textoMostrado', '');
+            limpiarTextoIngresado();
+            deshabilitarImagen();
+            botonCopiar();
         }
 
         return;
@@ -132,11 +131,15 @@ function desencriptar() {
         mensajeDesencriptado = resultado;
         console.log(`Texto Final: ${mensajeDesencriptado}`);
 
-        mostrarTextoFinal('#textoMostrado', mensajeDesencriptado);
-
-        if (mensaje.length < 1) {
-            mostrarTextoFinal('#textoSinEncriptar', 'Ningún mensaje fue encontrado para desencriptar');
+        if (mensaje.length < 1  || mensaje == mensajeDesencriptado ) {
+            mostrarTextoFinal('#textoMostrado', 'Ningún mensaje fue encontrado para desencriptar');
+        } else {
+            mostrarTextoFinal('#textoMostrado', mensajeDesencriptado);
+            deshabilitarImagen();
+            botonCopiar();
+            limpiarTextoIngresado();
         }
+
     }
 }
 
@@ -198,12 +201,3 @@ function botonCopiar() {
     return;
 }
 
-function copiarTexto(id) {
-
-    var r = document.createRange();
-    r.selectNode(document.getElementById(id));
-    window.getSelection().removeAllRanges();
-    window.getSelection().addRange(r);
-    document.execCommand('copy');
-    window.getSelection().removeAllRanges();
-}
