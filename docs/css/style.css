@@ -136,15 +136,14 @@ textarea:focus {
     font-family: myFirstFont;
     color: #0a3871;
     font-size: 14px;
-    border: none;
-    resize: none;
+    /* border: none;
+    resize: none; */
 }
 
 .texto-mostrado:focus {
     outline: none;
     color: #0a3871;
 }
-
 
 .boton-copiar-position {
 	margin: 25px auto;
@@ -180,6 +179,7 @@ textarea:focus {
 	margin: 10px auto;
 	text-align: center;
 	font-size: 15px;
+    color: #0a3871;
     font-family: myFirstFont;
 }
 
@@ -201,8 +201,7 @@ textarea:focus {
         display: inline;
         place-content: center;
         text-align: center;
-        margin: auto;
-        /* max-width: 100%; */
+        margin: auto
     }
 
     .logo h1 {
@@ -210,18 +209,50 @@ textarea:focus {
     }
 
     .container {
-        display: grid;
+        display: inline;
         place-content: center;
-        max-height: 100%;;
+        text-align: center;
+        padding-bottom: 80px;
+    }
+
+    .input {
+        display: block;
+        place-content: center;
+        margin: auto;
+        text-align: center;
+        width: 340px;
+    }
+
+    .decodificar {
+        display: block;
+        place-content: center;
+        margin: auto;
+        text-align: center;
+        width: 340px;
+    }
+
+    .contendor-imagen-texto {
+        margin-top: 30px;
+        display: block;
+        place-content: center;
+        text-align: center;
+    }
+
+    .imagen {
+        margin-top: 50px;
+    }
+
+    .contenedor-texto-mostrado {
+        padding-top: 30px;
     }
 	
-	.input .decodificar {
-		display: inline-block;
-        place-content: center;
-	} 
+    .div-footer {
+        margin-top: 40px;
+    }
 	
     .div-footer p {
-        margin-top: 30px 
+        display: inline-block;
+        place-content: center;
     }
 
 }
