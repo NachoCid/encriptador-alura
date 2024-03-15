@@ -10,6 +10,7 @@ body {
 .container {
 	display: inline;
     max-width: 100%;
+    max-height: 670px;;
     display: flex;
     place-content: center;
 }
@@ -194,26 +195,33 @@ textarea:focus {
 }
 
 
-@media screen and (max-width:820px){
+@media screen and (max-width:835px){
 
     .logo {
-        /* display: grid;
-        place-content: center; */
-        margin: 15px;
+        display: inline;
+        place-content: center;
+        text-align: center;
+        margin: auto;
+        /* max-width: 100%; */
     }
+
+    .logo h1 {
+        margin: 20px auto;
+    }
+
     .container {
-        /* display: inline-block; */
-        /* place-content: center; */
         display: grid;
         place-content: center;
+        max-height: 100%;;
     }
 	
 	.input .decodificar {
-		/* display: flex; */
-		/* place-content: center; */
 		display: inline-block;
         place-content: center;
 	} 
 	
+    .div-footer p {
+        margin-top: 30px 
+    }
 
 }
